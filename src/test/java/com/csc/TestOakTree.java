@@ -14,8 +14,30 @@ public class TestOakTree {
     tree = new OakTree();
   }
 
-  @Test
-  void itWorks() {
-    assertEquals(true, true);
+  @Test 
+  void testGetLeft() {
+    Squirrel cheeks = new Squirrel("cheeks");
+    Node nodeOne = new Node(cheeks);
+
+    Squirrel chip = new Squirrel("chip");
+    Node nodeTwo = new Node(chip);
+
+    nodeOne.insertLeft(nodeTwo);
+
+    assertEquals(nodeOne.getLeft().getValue().getName(), "chip");
+  }
+
+  @Test 
+  void testGetRight() {
+    Squirrel cheeks = new Squirrel("cheeks");
+    Node nodeOne = new Node(cheeks);
+
+    Squirrel chip = new Squirrel("chip");
+    Node nodeTwo = new Node(chip);
+
+    nodeOne.insertRight(nodeTwo);
+
+    assertEquals(nodeOne.getRight().getValue().getName(), "chip");
+
   }
 }
