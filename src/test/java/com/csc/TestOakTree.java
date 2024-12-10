@@ -40,4 +40,20 @@ public class TestOakTree {
     assertEquals(nodeOne.getRight().getValue().getName(), "chip");
 
   }
+
+  @Test 
+  void testGenericLeft() {
+    GenericNode<Integer> intNode = new GenericNode<>(13);
+    intNode.insertLeft(new GenericNode<>(90));
+
+    assertEquals(intNode.getLeft().getValue(), 90);
+  }
+
+  @Test 
+  void testGenericRight() {
+    GenericNode<Integer> intNode = new GenericNode<>(13);
+    intNode.insertRight(new GenericNode<>(81));
+
+    assertEquals(intNode.getRight().getValue(), 81);
+  }
 }
